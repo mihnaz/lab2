@@ -15,8 +15,6 @@ def check_readable(path):
         raise PermissionError(f"Нет прав на чтение файла: {path}")
 
 def main():
-
-
     input_file = input("Введите файл для обработки: ")
     input_path = f"Lab2_Media/data/input/{input_file}"
     output_path = "Lab2_Media/data/output/result.jpg"
@@ -47,7 +45,8 @@ def main():
     if not ok:
         print(f"Ошибка: cv2.imwrite не смог записать файл {output_path}")
         return
-
+    else:
+        print("Изображение обработано")
 
 
 if __name__ == "__main__":
