@@ -25,14 +25,14 @@ def main():
     except (FileNotFoundError, PermissionError, IsADirectoryError) as e:
         print(f"Ошибка чтения: {e}")
         logger.log(file=input_file, filter=UNSHARP_MASKING, is_correct=False)
-        logger.log(file=input_file, filter=UNSHARP_MASKING, is_correct=False)
+        logger.log(file=input_file, filter=WHITE_BALANCE, is_correct=False)
         return
 
     img = cv2.imread(input_path)
     if img is None:
         print(f"Ошибка: не удалось прочитать или декодировать файл {input_path}")
         logger.log(file=input_file, filter=UNSHARP_MASKING, is_correct=False)
-        logger.log(file=input_file, filter=UNSHARP_MASKING, is_correct=False)
+        logger.log(file=input_file, filter=WHITE_BALANCE, is_correct=False)
         return
 
 
